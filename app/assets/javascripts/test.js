@@ -1,28 +1,33 @@
-var game = new Phaser.Game(innerWidth, innerHeight, Phaser.CANVAS, 'phaser-example', { create: create, update: update });
 
-var circle, roundRec;
+function preload(){
+    game.load.image('board_tile', '../assets/board_tile.svg');
+    game.load.image('reward_smile', '../assets/reward_smile.svg');
+}
 
 function create() {
 
-    //  Create a Circle
-    // circle = new Phaser.Circle(game.world.centerX, game.world.centerY, 500);
-    recWidth = 100;
-    // roundRec = new Phaser.RoundedRectangle(game.world.centerX-recWidth/2, game.world.centerY, recWidth,recWidth,10);
-    // roundRec.inputEnabled = true;
-    // roundRec.input.enableDrag(true);
+    var sprite1 = game.add.sprite(5, 100, 'board_tile');
+    var sprite2 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite1, Phaser.RIGHT_CENTER, 2);
+    var sprite3 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite2, Phaser.RIGHT_CENTER, 2);
+    var sprite4 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite3, Phaser.RIGHT_CENTER, 2);
+    var sprite5 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite4, Phaser.RIGHT_CENTER, 2);
+    var sprite6 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite5, Phaser.RIGHT_CENTER, 2);
 
-     //  And display our circle on the top
-    var graphics = game.add.graphics(0, 0);
-    graphics.beginFill(0xFF0000);
-    graphics.lineStyle(1, 0x00ff00, 1);
-    // graphics.drawCircle(circle.x, circle.y, circle.diameter);
-
-    graphics.drawRoundedRect(game.world.centerX-recWidth/2, game.world.centerY, recWidth, recWidth, 10);
+    var rSmile = game.add.sprite(game.world.centerX, game.world.centerY, 'reward_smile');
+    rSmile.scale.setTo(2,2);
+    rSmile.inputEnabled = true;
+    rSmile.input.enableDrag();
+    rSmile.events.onDragStart.add(onDragStart, this);
+    rSmile.events.onDragStop.add(onDragStop, this);
 
 }
 
 function update () {
 
 
+
+}
+
+function arrayOfTiles(){
 
 }
