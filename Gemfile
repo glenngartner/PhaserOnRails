@@ -45,3 +45,6 @@ group :development do
   gem 'spring'
 end
 
+
+# install bootstrap sass
+gem 'bootstrap-sass'
