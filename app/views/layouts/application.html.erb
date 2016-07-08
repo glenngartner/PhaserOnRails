@@ -8,6 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Kiddo Motivator</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="<%= root_path %>">Home</a></li>
+      <li><a href="<%= game_index_path %>">Game</a></li>
+      <li><a href="<%= game_edit_path %>">Edit Game</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container-fluid">
 
   <%= yield %>
