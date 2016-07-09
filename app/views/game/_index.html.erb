@@ -1,32 +1,39 @@
 <script>
-    var game = new Phaser.Game(innerWidth, innerHeight,  Phaser.CANVAS, 'phaser-example', {
-        preload: preload,
-        create: create,
-        update: update
-    });
+  var game = new Phaser.Game(innerWidth, innerHeight, Phaser.CANVAS, 'phaser-example', {
+    preload: preload,
+    create: create,
+    update: update
+  });
 
-    function preload() {
-        game.load.image('board_tile', '../assets/board_tile.svg');
-        game.load.image('reward_smile', '../assets/reward_smile.svg');
-    }
+  function preload() {
+    game.load.image('board_tile', '../assets/board_tile.svg');
+    game.load.image('reward_smile', '../assets/reward_smile.svg');
+    game.load.image('background_space', '../assets/Background.png');
+    game.load.image('spaceship', '../assets/Space_Ship.png');
+    game.load.image('toilet', '../assets/Toilet.png');
+    game.load.image('star01', '../assets/star.svg')
+  }
 
-    function create() {
-      
-        var sprite1 = game.add.sprite(5, 100, 'board_tile');
-        var sprite2 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite1, Phaser.RIGHT_CENTER, 2);
-        var sprite3 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite2, Phaser.RIGHT_CENTER, 2);
-        var sprite4 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite3, Phaser.RIGHT_CENTER, 2);
-        var sprite5 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite4, Phaser.RIGHT_CENTER, 2);
-        var sprite6 = game.add.sprite(0, 0, 'board_tile').alignTo(sprite5, Phaser.RIGHT_CENTER, 2);
+  function create() {
 
-        var rSmile = game.add.sprite(game.world.centerX, game.world.centerY, 'reward_smile');
-        rSmile.scale.setTo(2, 2);
-        rSmile.inputEnabled = true;
-        rSmile.input.enableDrag();
+    // create board assets
+    game.stage.backgroundColor = '#FFFFFF';
+    var background = game.add.sprite(0, 0, 'background_space');
 
-    }
+    var spaceship = newDraggableToken(spaceship, 15, 75, 'spaceship', .65, .65);
 
-    function update() {}
+    var toilet = newDraggableToken(toilet, 5, 175, 'toilet', 0.5, 0.5);
 
-    function arrayOfTiles() {}
+    var star01 = newDraggableToken(star01, 5, 250, 'star01', 1.5, 1.5);
+
+    var smile01 = newDraggableToken(smile01, 15, 15, 'reward_smile', 2, 2);
+
+    var smile02 = newDraggableToken(smile02, 15, 325, 'reward_smile', 2, 2);
+
+
+  }
+
+  function update() {
+  }
+
 </script>
