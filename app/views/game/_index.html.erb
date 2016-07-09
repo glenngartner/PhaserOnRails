@@ -6,12 +6,12 @@
   });
 
   function preload() {
-    game.load.image('board_tile', '../../assets/images/board_tile.svg');
-    game.load.image('reward_smile', '../../assets/images/reward_smile.svg');
-    game.load.image('background_space', '../../assets/images/Background.png');
-    game.load.image('spaceship', '../../assets/images/Space_Ship.png');
+    game.load.image('board_tile', '../assets/board_tile.svg');
+    game.load.image('reward_smile', '../assets/reward_smile.svg');
+    game.load.image('background_space', '../assets/Background.png');
+    game.load.image('spaceship', '../assets/Space_Ship.png');
     game.load.image('toilet', '../assets/Toilet.png');
-    game.load.image('star01', '../../assets/images/star.svg');
+    game.load.image('star01', '../assets/star.svg');
   }
 
   // Look at asset URL helper in Rails, image URL
@@ -55,7 +55,7 @@
 
     game.create.texture('heart', heart_sketch, 4, 4, 0);
 
-    var heart01 = newDraggableToken(heart01, 15, 400, 'heart');
+    var heart01 = newDraggableToken(heart01, 15, 400, 'heart', 1, 1);
 
 
     // ***************************************************************
