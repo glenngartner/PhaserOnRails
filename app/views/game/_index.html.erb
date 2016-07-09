@@ -14,13 +14,15 @@
     game.load.image('star01', '../assets/star.svg')
   }
 
+  var spaceship;
+
   function create() {
 
     // create board assets
     game.stage.backgroundColor = '#FFFFFF';
     var background = game.add.sprite(0, 0, 'background_space');
 
-    var spaceship = newDraggableToken(spaceship, 15, 75, 'spaceship', .65, .65);
+    spaceship = newDraggableToken(spaceship, 15, 75, 'spaceship', .65, .65);
 
     var toilet = newDraggableToken(toilet, 5, 175, 'toilet', 0.5, 0.5);
 
@@ -49,13 +51,46 @@
       '......000.......'
     ];
 
-    game.create.texture('heart', heart_sketch, 4, 4, 0 );
+    game.create.texture('heart', heart_sketch, 4, 4, 0);
 
     var heart01 = newDraggableToken(heart01, 15, 400, 'heart');
+
+
+    // ***************************************************************
+    // ********** Rough Save Data Code IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+    heart01.events.onDragStop.add(onDragStop, this);
+
+
+
+    // Test the heart movement, and saving the position data (for saved game)
+    var heartPrintout;
+    var heartPosJSON = [];
+
+    // concept function for when a token or game piece is dropped after a drag.
+    // Should kick off the position data saving
+
+    function onDragStop() {
+      heartPrintout = "(" + heart01.x + ", " + heart01.y + "), ";
+      console.log(heartPrintout);
+      $('#Heart_Pos').append(heartPrintout);
+
+      // create an array for JSON parsing
+      heartPosJSON = [{"x": this.x, "y": this.y}];
+
+      // I don't have this array to JSON parsing down yet.
+      // When I do, I expect JSON to a rails DB via AJAX is a good way to store board piece postiion info.
+//      var heartJSON = JSON.parse(heartPosJSON.toString(''));
+//      var stringyJSON = JSON.stringify(heartJSON.push);
+      console.log(heartPosJSON);
+    }
 
   }
 
   function update() {
+
   }
 
 </script>
+<p>Move the Heart, and watch the position update here</p>
+<p id="Heart_Pos">Heart Position (x,y): </p>
