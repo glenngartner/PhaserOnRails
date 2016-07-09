@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df611ca3-413b-4fb3-a4e6-4d14405e7c45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/preloaderBar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/Game/Boot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/Game/Level1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/Game/MainMenu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/Game/Preloader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/Game/Tokens.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/game/_game.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/easeljs-0.8.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/z-easel_test.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/phaser.min.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/Game/phaser.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/test.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/Game/test.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/game/_index.html.erb" afterPath="$PROJECT_DIR$/app/views/game/_index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/game/index.html.erb" afterPath="$PROJECT_DIR$/app/views/game/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/game/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/game/edit.html.erb" />
     </list>
     <ignored path="PhaserOnRails02.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +34,18 @@
       <file leaf-file-name="_index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/game/_index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="38" column="3" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
+            <state relative-caret-position="618">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/game/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1872">
+              <caret line="425" column="12" selection-start-line="425" selection-start-column="8" selection-end-line="425" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -109,7 +108,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/test.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-        <option value="$PROJECT_DIR$/app/views/game/edit.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
@@ -124,6 +122,9 @@
         <option value="$PROJECT_DIR$/app/views/game/_game.html.erb" />
         <option value="$PROJECT_DIR$/app/views/game/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/Game/Tokens.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/Game/Genpaint.js" />
+        <option value="$PROJECT_DIR$/app/views/game/edit.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/game/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/game/_index.html.erb" />
       </list>
     </option>
@@ -530,12 +531,12 @@
       <workItem from="1467935186671" duration="17000" />
       <workItem from="1467942306120" duration="10387000" />
       <workItem from="1468003983064" duration="4583000" />
-      <workItem from="1468008812179" duration="10365000" />
+      <workItem from="1468008812179" duration="12863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42963000" />
+    <option name="totallyTimeSpent" value="45461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1052" extended-state="0" />
@@ -822,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/game/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/Game/phaser.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -874,7 +868,7 @@
         <state relative-caret-position="288">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -944,10 +938,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/Game/Genpaint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="769" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/game/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1872">
+          <caret line="425" column="12" selection-start-line="425" selection-start-column="8" selection-end-line="425" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/game/_index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="3" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
+        <state relative-caret-position="618">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
