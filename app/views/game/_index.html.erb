@@ -24,15 +24,14 @@
     game.stage.backgroundColor = '#FFFFFF';
     var background = game.add.sprite(0, 0, 'background_space');
 
-    spaceship = newDraggableToken(spaceship, 15, 75, 'spaceship', .65, .65);
+    // create game assets
+    var spaceship = new GamePiece('spaceship', 15, 75);
 
-    var toilet = newDraggableToken(toilet, 5, 175, 'toilet', 0.5, 0.5);
+    var toilet = new GamePiece('toilet', 5, 175);
 
-    var star01 = newDraggableToken(star01, 5, 250, 'star01', 1.5, 1.5);
+    var star = new GamePiece('star01', 5, 250);
 
-    var smile01 = newDraggableToken(smile01, 15, 15, 'reward_smile', 2, 2);
-
-    var smile02 = newDraggableToken(smile02, 15, 325, 'reward_smile', 2, 2);
+    var smile = new GamePiece('reward_smile', 15, 15);
 
     var heart_sketch = [
       '................',
@@ -53,38 +52,47 @@
       '......000.......'
     ];
 
+
     game.create.texture('heart', heart_sketch, 4, 4, 0);
 
-    var heart01 = newDraggableToken(heart01, 15, 400, 'heart', 1, 1);
+    var heart = new GamePiece('heart', 15, 400);
+
+
+    // Temp working section
+
 
 
     // ***************************************************************
-    // ********** Rough Save Data Code IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    // ********** Rough Save Data Code *******************************
 
-    heart01.events.onDragStop.add(onDragStop, this);
+    heart.object.events.onDragStop.add(onDragStop, this);
 
 
 
     // Test the heart movement, and saving the position data (for saved game)
     var heartPrintout;
-    var heartPosJSON = [];
+    var heartPos = [];
+    var heartJSON;
 
     // concept function for when a token or game piece is dropped after a drag.
     // Should kick off the position data saving
 
     function onDragStop() {
-      heartPrintout = "(" + heart01.x + ", " + heart01.y + "), ";
+      heartPrintout = "(" + heart.x + ", " + heart.y + "), ";
       console.log(heartPrintout);
       $('#Heart_Pos').append(heartPrintout);
 
-      // create an array for JSON parsing
-      heartPosJSON = [{"x": this.x, "y": this.y}];
+      // create an array for JSON file
+      heartPos = [{"x": heart.x, "y": heart.y}];
+     // console.log(heartPos);
+      heartJSON = JSON.stringify(heartPos);
+      console.log(heartJSON);
+
 
       // I don't have this array to JSON parsing down yet.
       // When I do, I expect JSON to a rails DB via AJAX is a good way to store board piece postiion info.
 //      var heartJSON = JSON.parse(heartPosJSON.toString(''));
 //      var stringyJSON = JSON.stringify(heartJSON.push);
-      console.log(heartPosJSON);
     }
 
   }
